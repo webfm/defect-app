@@ -18,10 +18,10 @@ GET https://secure.omtrak.com/v2/projects/:project_id/?account=:account_id
 return project meta data for project_id, account param is a temp measure for login, this call only work for :account_id=6 and :projects_id = 8
 
 ### parameters ###
-* account_id: used for login as a temp measure before oauth is implemented
-	* temporary
 * project_id:  project id
 	* required
+* account_id: used for login as a temp measure before oauth is implemented
+	* temporary
 
 #### examples ###
 
