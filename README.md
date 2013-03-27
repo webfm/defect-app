@@ -10,12 +10,29 @@ return a list of projects, account param is a temp measure for login, this call 
 ### parameters ###
 * account_id: used for login as a temp measure before oauth is implemented temporary
   * temporary
+  
+### example ###
+
+https://secure.omtrak.com/v2/projects?account=6
+
+	[
+	    {
+	        "id": 1,
+	        "name": "DEMO - Sample Project"
+	    },
+	    {
+	        "id": 8,
+	        "name": "DEMO - Test Project"
+	    }
+	]
 
 Project Data
 ------------
 GET https://secure.omtrak.com/v2/projects/:project_id/?account=:account_id
 
-return project meta data for project_id, account param is a temp measure for login, this call only work for :account_id=6 and :projects_id = 8
+return project meta data for project_id
+
+account param is a temp measure for login, this call only work for :account_id=6 and :projects_id = 8
 
 ### parameters ###
 * project_id:  project id
