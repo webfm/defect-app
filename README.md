@@ -15,16 +15,16 @@ return a list of projects, account param is a temp measure for login, this call 
 
 https://secure.omtrak.com/v2/projects?account=6
 
-	[
-	    {
-	        "id": 1,
-	        "name": "DEMO - Sample Project"
-	    },
-	    {
-	        "id": 8,
-	        "name": "DEMO - Test Project"
-	    }
-	]
+    [
+        {
+            "id": 1,
+            "name": "DEMO - Sample Project"
+        },
+        {
+            "id": 8,
+            "name": "DEMO - Test Project"
+        }
+    ]
 
 Project Data
 ------------
@@ -36,9 +36,9 @@ account param is a temp measure for login, this call only work for :account_id=6
 
 ### parameters ###
 * project_id:  project id
-	* required
+    * required
 * account_id: used for login as a temp measure before oauth is implemented
-	* temporary
+    * temporary
 
 #### examples ###
 
@@ -85,8 +85,38 @@ result:
                 "field": "g808",
                 "label": "Documents",
                 "type": "DOCUMENT"
-            }
+            },
+            
         ],
+        categories: [
+            structure: [
+                {
+                    sort: 1,
+                    name: service,
+                    label: Service
+                },
+                {
+                    sort: 2,
+                    name: subservice,
+                    label: Subservice
+                }
+            ],
+            values: [
+                {
+                    id: 2345,
+                    code: XXX,
+                    label: Xxx Yyy Zzz,
+                    children: [
+                        {
+                            id: 2346,
+                            code: WWW,
+                            label: Www Zzz Sss
+                        }
+                    ]
+                }
+            ] 
+        ],
+        locations: [],
         "teams": [
             {
                 "id": 233,
@@ -100,22 +130,27 @@ result:
                 "id": 66,
                 "name": "WebFM"
             }
+        ],
+        permissions: [
+            CREATE, 
+            ASSIGN, 
+            FIX
         ]
     }
 
 
 * project - project name, id
 * template - defects fields for the project
-	* sort - sort order
-	* field - field id used in OMTrak system
-	* label - name of the field
-	* type - field type
-		* INPUT - text input single line
-		* EDITOR - multi lined text input
-		* SELECT - selector field, can be chained 
-		* DOCUMENT - attached document field
-	* source - selector list source
-		* type - selector source type
-			* CATEGORIES - use category value list as source for selector
-			* LOCATIONS - use location value list as source for selector
-			* source can have other type such as user defined value list, the source type will specify what value list to use
+    * sort - sort order
+    * field - field id used in OMTrak system
+    * label - name of the field
+    * type - field type
+        * INPUT - text input single line
+        * EDITOR - multi lined text input
+        * SELECT - selector field, can be chained 
+        * DOCUMENT - attached document field
+    * source - selector list source
+        * type - selector source type
+            * CATEGORIES - use category value list as source for selector
+            * LOCATIONS - use location value list as source for selector
+            * source can have other type such as user defined value list, the source type will specify what value list to use
