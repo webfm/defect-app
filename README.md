@@ -1,16 +1,16 @@
 Defects API
 ===========
 
-servers
+Servers
 -------
 
-### production server ###
+### Production Server ###
 
-https://secure.omtrak.com - production server, is on at all time, may have older version of the api
+https://secure.omtrak.com - Production Server, is on at all time, may have older version of the API.
 
-### Staging server ###
+### Staging Server ###
 
-https://staging.omtrak.com - staging server, is on for short period of time used for testing.  we may need to point the app to the staging server to use newer version of the API from time to time.
+https://secure.omtrak.net - Staging Server, is on for short period of time used for testing.  we may need to point the app to the staging server to use newer version of the API from time to time.
 
 
 
@@ -19,13 +19,12 @@ Project List
 
 GET https://secure.omtrak.com/v2/projects?account=:account_id
 
-return a list of projects, account param is a temp measure for login, this call only work for: account_id=6
+Returns a list of projects.
 
-### parameters ###
-* account_id: used for login as a temp measure before oauth is implemented temporary
-  * temporary
+### Parameters ###
+* account: *[temporary]* used for login while oauth is implemented. Only works for account equal to 6.
 
-### example ###
+### Example ###
 
 https://secure.omtrak.com/v2/projects?account=6
 
@@ -43,140 +42,132 @@ https://secure.omtrak.com/v2/projects?account=6
 Project Data
 ------------
 
-GET https://secure.omtrak.com/v2/projects/:project_id/?account=:account_id
+GET https://secure.omtrak.com/v2/projects/:project_id/?data=:boolean_value&account=:account_id
 
-return project meta data for project_id
+Returns project data and (optionally) project metadata for project_id.
 
-account param is a temp measure for login, this call only work for :account_id=6 and :projects_id = 8
-
-### parameters ###
-* project_id:  project id
+### Parameters ###
+* project: project id.
     * required
-* account_id: used for login as a temp measure before oauth is implemented
-    * temporary
+* data: true or false, whether to return the metadata related to the project.
+* account: *[temporary]* used for login while oauth is implemented. Only works for account equal to 6.
 
-#### examples ###
+#### Example ###
 
-https://secure.omtrak.com/v2/projects/8/?account=6
-
-result:
+https://secure.omtrak.com/v2/projects/8?account=6
 
     {
         "project": {
-            "id": "8",
+            "id": 8,
             "name": "DEMO - Test Project"
         },
         "template": [
-            {
-                "sort": "1",
-                "field": "g805",
-                "label": "Short Description",
-                "type": "INPUT",
-                validators: []
-            },
-            {
-                "sort": "2",
-                "label": "Location",
-                "type": "SELECT",
-                "validators": [],
-                "source": {
-                    "type": "LOCATIONS"
-                }
-            },
-            {
-                "sort": "3",
-                "label": "Services",
-                "type": "SELECT",
-                "validators": [],
-                "source": {
-                    "type": "CATEGORIES"
-                }
-            },
-            {
-                "sort": "4",
-                "field": "g807",
-                "label": "Details",
-                "type": "EDITOR"
-            },
-            {
-                "sort": "5",
-                "field": "g808",
-                "label": "Documents",
-                "type": "DOCUMENT"
-            },
-
+         {
+        		"sort": 1,
+        		"field": "g805",
+        		"label": "Short Description",
+        		"type": "INPUT",
+        		"validators": [
+        			{
+        				"type": "MAXIMUM_LENGTH",
+        				"value": "255"
+        			},
+        			{
+        				"type": "REQUIRED"
+        			}
+        		]
+        	},
+        	{
+        		"sort": 2,
+        		"label": "Location",
+        		"type": "SELECT",
+        		"prefix": "h806",
+        		"source": {
+        			"type":"LOCATIONS"
+        		}
+        	},
+        	{
+        		"sort": 3,
+        		"label": "Services",
+        		"type": "SELECT",
+        		"prefix": "h2273",
+        		"source": {
+        			"type":"CATEGORIES"
+        		}
+        	},
+        	{
+        		"sort": 4,
+        		"field": "g807",
+        		"label": "Details",
+        		"type": "EDITOR"
+        	},
+        	{
+        		"sort": 5,
+        		"field": "g808",
+        		"label": "Documents",
+        		"type": "DOCUMENT"
+        	}
         ],
         "categories": [
-            "structure": [
+            "labels": [
                 {
-                    "sort": "1",
-                    "field": "service",
+                    "sort": 1,
+                    "field": "c1",
                     "label": "Service"
                 },
                 {
-                    "sort": "2",
-                    "field": "subservice",
+                    "sort": 2,
+                    "field": "c2",
                     "label": "Subservice"
                 }
             ],
             "values": [
                 {
-                    "id": "2345",
-                    "code": "XXX",
-                    "label": "Xxx Yyy Zzz",
+                    "id": 2345,
+                    "label": "(SBS) Special Building Service",
                     "children": [
                         {
-                            "id": "2346",
-                            "code": "WWW",
-                            "label": "Www Zzz Sss"
+                            "id": 2346,
+                            "label": "(TP) Teleporter"
                         }
                     ]
                 }
             ]
         ],
         "locations": [
-            "structure": [
+            "labels": [
                 {
-                    "sort": "1",
-                    "field": "facility",
-                    "label": "Facility"
+                    "sort": 1,
+                    "field": "11",
+                    "label": "Site"
                 },
                 {
-                    "sort": "2",
-                    "field": "level",
+                    "sort": 2,
+                    "field": "1230",
+                    "label": "Structure"
+                },
+                {
+                    "sort": 3,
+                    "field": "1231",
                     "label": "Level"
-                },
-                {
-                    "sort": "3",
-                    "name": "room",
-                    "label": "Space"
                 }
             ],
             "values": [
                 {
-                    "id": "2345",
-                    "code": "XXX",
-                    "label": "Xxx Yyy Zzz",
+                    "id": 2345,
+                    "label": "London (LD)",
                     "children": [
                         {
-                            "id": "2346",
-                            "code": "WWW",
-                            "label": "Www Zzz Sss",
+                            "id": 2346
+                            "label": "Building A (BA)",
                             "children": [
                                 {
-                                    "id": "2346",
-                                    "code": "WWW",
-                                    "label": "Www Zzz Sss"
+                                    "id": 2347,
+                                    "label": "Lube Reel - D23 (G-05)"
                                 },
                                 {
-                                    "id": "2347",
-                                    "code": "WWY",
-                                    "label": "Wwy Zzz Sss"
-                                },
-                                {
-                                    "id": "2348",
-                                    "code": "WWX",
-                                    "label": "Wwx Zzz Sssæ
+                                    "id": 2348,
+                                    "label": "FHR - D24 (G-06)"
                                 }
                            ]
                         }
@@ -198,10 +189,8 @@ result:
                 "name": "WebFM"
             }
         ],
-        permissions: [
-            CREATE,
-            ASSIGN,
-            FIX
+        "privileges": [
+            "DEFECTS_CREATE","DEFECTS_ASSIGN","DEFECTS_FIX","DEFECTS_SET_DUE_DATE","DEFECTS_CLOSE","DEFECTS_DELETE"
         ]
     }
 
@@ -210,6 +199,7 @@ result:
 * template - defects fields for the project
     * sort - sort order
     * field - field id used in OMTrak system
+    * prefix - ...
     * label - name of the field
     * type - field type
         * INPUT - text input single line
@@ -221,23 +211,24 @@ result:
             * CATEGORIES - use category value list as source for selector
             * LOCATIONS - use location value list as source for selector
             * source can have other type such as user defined value list, the source type will specify what value list to use
-* category - category list for defect, used for template.source.type = "CATEGORIES"
-    * structure - meta data for category
+    * validators - ...
+* categories - category list for defect, used for template.source.type = "CATEGORIES"
+    * labels - meta data for category
         * label - display name,
-        * name - used in sync data,
+        * field - used in sync data,
         * sort - sort order
     * value - values for cateogry hierarchy
         * id - identity of hierarchy value
-        * code - used for display
-        * name - used for display
+        * label - used for display
         * children - children of this value for building hierarchies
 * location - location list for defect, used for template.source.type = "LOCATIONS"
-    * structure - meta data for category
+    * labels - meta data for category
         * label - display name,
-        * name - used in sync data,
+        * field - used in sync data,
         * sort - sort order
     * value - values for cateogry hierarchy
         * id - identity of hierarchy value
-        * code - used for display
-        * name - used for display
+        * label - used for display
         * children - children of this value for building hierarchies
+* teams
+* privileges
