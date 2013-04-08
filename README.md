@@ -12,21 +12,21 @@ https://secure.omtrak.com - Production Server, is on at all time, may have older
 
 https://secure.omtrak.net - Staging Server, is on for short period of time used for testing.  we may need to point the app to the staging server to use newer version of the API from time to time.
 
-
-
 Project List
 ------------
 
-GET https://secure.omtrak.com/v2/projects?account=:account_id
+GET https://secure.omtrak.com/v2/projects?module=:module_name&account=:account_id
 
-Returns a list of projects.
+Returns a list of projects the user have access to. If the module parameter is set, it will only return the projects where the user have access to the specified module.
 
 ### Parameters ###
+
+* module: for now, it should always be set to "defects"
 * account: *[temporary]* used for login while oauth is implemented. Only works for account equal to 6.
 
 ### Example ###
 
-https://secure.omtrak.com/v2/projects?account=6
+https://secure.omtrak.com/v2/projects?module=defects&account=6
 
     [
         {
@@ -42,19 +42,20 @@ https://secure.omtrak.com/v2/projects?account=6
 Project Data
 ------------
 
-GET https://secure.omtrak.com/v2/projects/:project_id/?data=:boolean_value&account=:account_id
+GET https://secure.omtrak.com/v2/projects/:project_id/?module=:module_name&data=:boolean_value&account=:account_id
 
 Returns project data and (optionally) project metadata for project_id.
 
 ### Parameters ###
 * project: project id.
     * required
+* module: for now, it should always be set to "defects"
 * data: true or false, whether to return the metadata related to the project.
 * account: *[temporary]* used for login while oauth is implemented. Only works for account equal to 6.
 
 #### Example ###
 
-https://secure.omtrak.com/v2/projects/8?account=6
+https://secure.omtrak.com/v2/projects/8?module=defects&account=6
 
     {
         "project": {
@@ -62,7 +63,7 @@ https://secure.omtrak.com/v2/projects/8?account=6
             "name": "DEMO - Test Project"
         },
         "template": [
-         {
+            {
         		"sort": 1,
         		"field": "g805",
         		"label": "Short Description",
