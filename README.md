@@ -195,7 +195,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6
         ]
     }
 
-
 * project - project name, id
 * template - defects fields for the project
     * sort - sort order
@@ -231,13 +230,68 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6
         * id - identity of hierarchy value
         * label - used for display
         * children - children of this value for building hierarchies
-* teams
-* privileges
+* teams - if a user have assign priviledge, he can assign the defect to a team which is listed here
+* privileges - there are 10 priviledges
+    * DEFECTS – if a user has access to the defect module. IGNORE THIS PERMISSION.
+    * DEFECTS_CREATE – if a user can create a defect.
+        * If a user doesn't have the defects create permission, then in defect list view, the add new defect button will be hidden.
+    * DEFECTS_ASSIGN – if a user can assign the defect to a team.
+        * If a user doesn't have defect assign permission, then in defect edit view (http://db.tt/anFvB5TT), the assignee field will not be editable (it will be hidden in the edit view).
+    * DEFECTS_DELETE – if a user can delete the defect.
+        * A user must have the delete permission AND be either the creator OR have both View All and Edit All privileges to be able to delete a task. Otherwise, the delete button will be hidden.
+    * DEFECTS_ADD_COMMENT – if a user can add comments.
+        * If a user doesn't have the add comment permission, then in comment view (http://db.tt/UawQ5Pzi), the add comment button will be hidden.
+    * DEFECTS_SET_DUE_DATE – if a user can set the due date of the defect.
+        * If a user doesn't have this permission, then in defect edit view, the due date field not be editable (it will be hidden in the edit view).
+    * DEFECTS_EDIT_ALL – if a user can edit all defects.
+        * By default, a user can only edit the regular fields of a defect record (all the fields except for assignee, due date and status) if the user is the creator of the record. If a user has the edit all permission, the user will be able to edit the regular fields of all the defects he has access to.
+    * DEFECTS_FIX – see Status Changes.
+    * DEFECTS_CLOSE – see Status Changes.
+    * DEFECTS_VIEW_ALL – see Status Changes.
+
+* Statuses
+    * A defect record will display one of the following six statuses:
+        * Not Assigned
+        * Assigned
+        * In-Progress
+        * Inspect Now
+        * Rejected
+        * Closed
+* Status changes
+    * Pending ("Assigned" or "Not Assigned") when:
+        * Current status of the record is equal to In-Progress, Inspect Now OR Rejected AND:
+            * Their team is set as the Assignee Team for the record OR
+            *They have the following three privileges: View All, Edit All and Fix.
+        * Current status of the record is equal to Rejected OR Closed AND:
+            * Their team is the creator of the record AND they have Close privileges OR
+            * They have the following three privileges: View All, Edit All and Close.
+    * In-Progress when:
+        * Current status of the record is equal to Pending ("Assigned" or "Not Assigned"), Inspect Now OR Rejected AND:
+            * Their team is set as the Assignee Team for the record OR
+            * They have the following three privileges: View All, Edit All and Fix.
+        * Current status of the record is equal to Rejected OR Closed AND:
+            * Their team is the creator of the record AND they have Close privileges OR
+            * They have the following three privileges: View All, Edit All and Close.
+    * Inspect Now when:
+        * Current status of the record is equal to Pending ("Assigned" or "Not Assigned"), In-Progress  OR Rejected AND:
+            * Their team is set as the Assignee Team for the record OR
+            * They have the following three privileges: View All, Edit All and Fix.
+        * Current status of the record is equal to Rejected OR Closed AND:
+            * Their team is the creator of the record AND they have Close privileges OR
+            * They have the following three privileges: View All, Edit All and Close.
+    * Rejected when:
+        * Current status of the record is NOT equal to Rejected AND:
+            * Their team is the creator of the record AND they have Close privileges OR
+            * They have the following three privileges: View All, Edit All and Close.
+    * Closed when:
+        * Current status of the record is NOT equal to Closed AND:
+            * Their team is the creator of the record AND they have Close privileges OR
+            * They have the following three privileges: View All, Edit All and Close.
 
 Issue Data
 ----------
 
-GET https://secure.omtrak.com/v2/projects/:project_id/site-works?account=:account_id
+GET https://secure.omtrak.com/v2/projects/:project_id/defects?account=:account_id
 
 Returns issues in a project.
 
@@ -285,3 +339,4 @@ https://secure.omtrak.com/v2/projects/8/site-works?account=6
     * type - log type
         * STATUS_CHANGE_CLOSED | STATUS_CHANGE_REJECTED | STATUS_CHANGE_SUBMITTED | STATUS_CHANGE_IN_PROGRESS | STATUS_CHANGE_ASSIGNED | STATUS_CHANGE_NOT_ASSIGNED | STATUS_CHANGE_OPEN | ASSIGNED | COMMENT | CREATE | UPDATE
         * message - log message
+
