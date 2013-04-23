@@ -257,6 +257,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6
         * Inspect Now
         * Rejected
         * Closed
+
 * Status changes
     * Pending ("Assigned" or "Not Assigned") when:
         * Current status of the record is equal to In-Progress, Inspect Now OR Rejected AND:
