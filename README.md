@@ -14,8 +14,8 @@ https://secure.omtrak.net - Staging Server, is on for short period of time used 
 
 API
 ---
-* [Project List](Project-list.md "Project List")
-* [Project Data](Project-data.md "Project List")
+* [Project List](project-list.md "Project List")
+* [Project Data](project-data.md "Project List")
 * [Issue Data](issue-data.md "Project List")
 
 
