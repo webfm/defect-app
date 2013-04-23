@@ -237,7 +237,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6
 Issue Data
 ----------
 
-GET https://secure.omtrak.com/v2/projects/:project_id/defects?account=:account_id
+GET https://secure.omtrak.com/v2/projects/:project_id/site-works?account=:account_id
 
 Returns issues in a project.
 
@@ -248,7 +248,7 @@ Returns issues in a project.
 
 #### Example ###
 
-https://secure.omtrak.com/v2/projects/8?module=defects&account=6
+https://secure.omtrak.com/v2/projects/8/site-works?account=6
 
     [
         {
