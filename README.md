@@ -248,7 +248,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6
     * DEFECTS_FIX – see Status Changes.
     * DEFECTS_CLOSE – see Status Changes.
     * DEFECTS_VIEW_ALL – see Status Changes.
-
 * Statuses
     * A defect record will display one of the following six statuses:
         * Not Assigned
@@ -257,7 +256,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6
         * Inspect Now
         * Rejected
         * Closed
-
 * Status changes
     * Pending ("Assigned" or "Not Assigned") when:
         * Current status of the record is equal to In-Progress, Inspect Now OR Rejected AND:
