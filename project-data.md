@@ -136,22 +136,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
                     "label": "London (LD)"
                 },
                 {
-                    "id": 3,
-                    "label": "Orange (OR)",
-                    "children": [
-                        {
-                            "id": 4,
-                            "label": "Building A (BA)",
-                            "children": [
-                                {
-                                    "id": 6,
-                                    "label": "Ground (G)"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "id": 14718,
                     "label": "Blackwater Mine (BW)",
                     "children": [
@@ -180,10 +164,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
                                         {
                                             "id": 14749,
                                             "label": "Office Area 1 (01-01)"
-                                        },
-                                        {
-                                            "id": 14750,
-                                            "label": "Office Area 2 (01-02)"
                                         }
                                     ]
                                 },
@@ -214,10 +194,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
                     {
                         "id": 3,
                         "label": "Certificate"
-                    },
-                    {
-                        "id": 4,
-                        "label": "Commissioning"
                     }
                 ]
             }
@@ -342,7 +318,33 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
 * teams - if a user have assign priviledge, he can assign the defect to a team which is listed here
 * list - value list group
 
-### privileges - there are 10 priviledges
+### value lists
+
+value list include Locations, categories and Lists
+* value list contain two part
+    * labels - describe the structure of value list, heading for each hierarchy level
+    * value - value of each value list item
+* labels contains
+    * sort - order of hierachy level heading
+    * field - field id (don't need to use this field)
+    * label - label for hierarchy level heading
+* a value list item have the follow structure
+    * id
+    * label
+    * children - a list contain a number of value list item
+
+### Status ##
+
+* A defect record will display one of the following six statuses:
+    * Not Assigned
+    * Assigned
+    * In-Progress
+    * Inspect Now
+    * Rejected
+    * Closed
+
+### privileges - there are 10 priviledges ###
+
 * DEFECTS – if a user has access to the defect module. IGNORE THIS PERMISSION.
 * DEFECTS_CREATE – if a user can create a defect.
     * If a user doesn't have the defects create permission, then in defect list view, the add new defect button will be hidden.
@@ -360,18 +362,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
 * DEFECTS_CLOSE – see Status Changes.
 * DEFECTS_VIEW_ALL – see Status Changes.
 
-
-#### Status
-
-* A defect record will display one of the following six statuses:
-    * Not Assigned
-    * Assigned
-    * In-Progress
-    * Inspect Now
-    * Rejected
-    * Closed
-
-### Status changes
+### Status changes ###
 
 * Pending ("Assigned" or "Not Assigned") when:
     * Current status of the record is equal to In-Progress, Inspect Now OR Rejected AND:
