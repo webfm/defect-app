@@ -288,7 +288,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
             * LOCATIONS - use location value list as source for selector
             * VALUE_LIST - use values in list
         * id - only used for VALUE_LIST type, matchs lists.first element
-    * validators - ...
+    * validators - validator for a field
 * categories - category list for defect, used for template.source.type = "CATEGORIES"
     * labels - meta data for each list hierarchy level
         * label - display name,
@@ -393,3 +393,21 @@ value list include Locations, categories and Lists
     * Current status of the record is NOT equal to Closed AND:
         * Their team is the creator of the record AND they have Close privileges OR
         * They have the following three privileges: View All, Edit All and Close.
+
+### validators ###
+
+there are 8 validators can be applied to a template
+
+* validators for tempalte.type INPUT
+    * DECIMAL - decimal number
+    * WHOLE_NUMBER - whole number not decimal
+* validators for tempalte.type - INPUT, EDITOR
+    * REQUIRED
+    * UNIQUE
+    * MAXIMUM_LENGTH
+    * REGEX - regular expression validator, the value will be a regular expression
+* validators for template.type - SELECT
+    * REQUIRED_LEVEL - must fill in the hierarchy level for a field
+        * i.e. for location like 'site', 'structure', 'level', 'room', REQUIRED_LEVEL = 2 means user must select a 'site' and a 'structure'. level and room can be left blank
+    * END_LEVEL_DISPLAY - how many level in hierarchy level to be displayed in the selector
+        * i.e. for location like 'site', 'structure', 'level', 'room', END_LEVEL_DISPLAY = 3 only 'site', 'structure', 'level' are displayed in the selector
