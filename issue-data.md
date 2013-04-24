@@ -22,9 +22,14 @@ https://secure.omtrak.com/v2/projects/8/site-works?account=6
             "id": 229,
             "uid": "#ISS1",
             "status": "CLOSED",
-            "g805": "test",
+            "assignee": {
+                "id": 66,
+                "name": "WebFM"
+            },
             "h806": 3,
-            "g807": "aas",
+            "h3540": 2,
+            "g805": "Broken Window",
+            "g807": "Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
             "logs": [
                 {
                     "date": "2013-04-23T06:58:32Z",

@@ -225,18 +225,6 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
             },
             {
                 "sort": 4,
-                "field": "g807",
-                "label": "Details",
-                "type": "EDITOR"
-            },
-            {
-                "sort": 5,
-                "field": "g808",
-                "label": "Documents",
-                "type": "DOCUMENT"
-            },
-            {
-                "sort": 6,
                 "label": "Defect Type",
                 "type": "SELECT",
                 "prefix": "h3540",
@@ -244,6 +232,18 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
                     "type": "VALUE_LIST",
                     "id": 1
                 }
+            },
+            {
+                "sort": 5,
+                "field": "g807",
+                "label": "Details",
+                "type": "EDITOR"
+            },
+            {
+                "sort": 6,
+                "field": "g808",
+                "label": "Documents",
+                "type": "DOCUMENT"
             }
         ],
         "teams": [

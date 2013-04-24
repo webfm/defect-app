@@ -18,5 +18,10 @@ API
 * [Project Data](project-data.md "Project List")
 * [Issue Data](issue-data.md "Project List")
 
+I've done a few in detailed example here
+
+* [Location Selector Example](location-example.md "Location Selector Example")
+* [List Selector Example](list-example.md "List Selector Example")
+
 
 
