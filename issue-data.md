@@ -19,25 +19,33 @@ https://secure.omtrak.com/v2/projects/8/site-works?account=6
 
     [
         {
-            "id":229,
-            "uid":"#DF1",
-            "status":"CLOSED",
-            "a123":"test",
+            "id": 229,
+            "uid": "#ISS1",
+            "status": "CLOSED",
+            "g805": "test",
+            "h806": 3,
+            "g807": "aas",
             "logs": [
                 {
-                    "date":"2013-03-08T03:19:25Z",
-                    "type":"STATUS_CHANGE_CLOSED",
-                    "message":"John Smith (ACME) closed the defect."
+                    "date": "2013-04-23T06:58:32Z",
+                    "type": "UPDATE",
+                    "message": "Charlie Wu updated the issue."
                 },
                 {
-                    "date":"2013-03-05T04:48:25Z",
-                    "type":"ASSIGNED",
-                    "message":"Mary Li (ACME) assigned the defect to ACE Electrics."
+                    "date": "2013-04-24T00:04:05Z",
+                    "type": "COMMENT",
+                    "message": "Charlie Wu added a comment.",
+                    "comment": "hey thing is not fixed, what happened"
                 },
                 {
-                    "date":"2013-03-01T03:59:22Z",
-                    "type":"CREATE",
-                    "message":"John Smith (ACME) created the defect."
+                    "date": "2013-04-16T01:21:17Z",
+                    "type": "STATUS_CHANGE_IN_PROGRESS",
+                    "message": "Zhongtao Ren (OMTrak Support) changed the status to In-Progress."
+                },
+                {
+                    "date": "2013-04-08T06:47:40Z",
+                    "type": "CREATE",
+                    "message": "Zhongtao Ren (OMTrak Support) created the issue."
                 }
             ]
         }
@@ -51,10 +59,12 @@ https://secure.omtrak.com/v2/projects/8/site-works?account=6
     * IN_PROGRESS
     * SUBMITTED
     * CLOSED
-* a123 - correspond to Project Data template.field, represent value for field
+* a123 - link to a project template
+    * links to Project Data template.prefix for SELECT type
+    * links to Project Date template.field for all excpet SELECT type
 * logs - logs for issue
     * date - recorded date
-    * type - log type
+    * type - log type (we don't have to display this)
         * STATUS_CHANGE_CLOSED
         * STATUS_CHANGE_REJECTED
         * STATUS_CHANGE_SUBMITTED
@@ -66,4 +76,11 @@ https://secure.omtrak.com/v2/projects/8/site-works?account=6
         * COMMENT
         * CREATE
         * UPDATE
+        * if type is COMMENT then log be displayed in Comment section,
+        * if type is not COMMENT then log will be displayed in Log section
+        * log and comment section is display here http://db.tt/U4xXVqno
+    * comment - user created comment
+        * user can only create comment, comment content is add to this field (log with type "COMMENT")
+        * if log is type COMMET comment display "comment" as the detail in the table view
     * message - log message
+        * if log is not type COMMET comment display "message" as the detail in the table view
