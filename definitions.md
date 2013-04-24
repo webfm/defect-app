@@ -55,7 +55,8 @@ there are 10 priviledges
 
 <a name="status-change"/>
 
-### Status changes
+Status Changes
+--------------
 
 * Pending ("Assigned" or "Not Assigned") when:
     * Current status of the record is equal to In-Progress, Inspect Now OR Rejected AND:

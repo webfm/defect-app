@@ -322,11 +322,12 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
     * for details see [Value List](definitions.md#value-list "Value List")
     * for example see [List Example](list-example.md "List Example")
 * teams - if a user have assign priviledge, he can assign the defect to a team which is listed here
+* privileges - privileges for current user
+    * see [Privileges](definitions.md#privileges "Privileges") for more detail
 
 Other Definitions see  
 
-* [Status](definitions.md#status "Status")  
-* [Privileges](definitions.md#privileges "Privileges")  
-* [Status Change](definitions.md#status-change "Status Change")  
-* [Validators](definitions.md#validator "Validators")  
+* [Status](definitions.md#status "Status")
+* [Status Change](definitions.md#status-change "Status Change")
+* [Validators](definitions.md#validator "Validators")
 
