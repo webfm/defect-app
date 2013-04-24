@@ -18,6 +18,10 @@ API
 * [Project Data](project-data.md "Project List")
 * [Issue Data](issue-data.md "Project List")
 
+Term and Definitions
+--------------------
+* for explaination on some of the terms and data defintions see [here](definitions.md "Definitions")
+
 I've done a few in detailed example here
 
 * [Location Selector Example](location-example.md "Location Selector Example")
