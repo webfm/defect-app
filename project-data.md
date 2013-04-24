@@ -279,10 +279,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
     * prefix - the prefix value will match a elemnt in defect data (from defect list api call).  Prefix is used for template SELECT type
     * label - name of the field
     * type - field type
-        * INPUT - text input single line
-        * EDITOR - multi lined text input
-        * SELECT - selector field, can be chained
-        * DOCUMENT - attached document field
+        * see [here](definitions.md#template-type "definition") for detail
     * source - selector list source
         * type - selector source type
             * CATEGORIES - use category value list as source for selector

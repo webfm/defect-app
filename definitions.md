@@ -107,3 +107,13 @@ there are 8 validators can be applied to a template
         * i.e. for location like 'site', 'structure', 'level', 'room', REQUIRED_LEVEL = 2 means user must select a 'site' and a 'structure'. level and room can be left blank
     * END_LEVEL_DISPLAY - how many level in hierarchy level to be displayed in the selector
         * i.e. for location like 'site', 'structure', 'level', 'room', END_LEVEL_DISPLAY = 3 only 'site', 'structure', 'level' are displayed in the selector
+
+<a name="template-type"/>
+
+There are 5 type of template field
+
+* INPUT - single line of text
+* EDITOR - multiple line of text
+* DATE - stores date
+* SELECT - stores value list hierarchy
+* DOCUMENTS - store files 
