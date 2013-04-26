@@ -54,9 +54,17 @@ there are 10 priviledges
 * DEFECTS_VIEW_ALL – see Status Changes.
 
 <a name="status-change"/>
-
 Status Changes
 --------------
+
+User status can be changed in defect view (http://db.tt/HNhcdwdh).  
+
+A status button is used to both allow user change the status 
+and show the current status (currently shown as assigned). When user tap on the status button, a popover will appear giving user a list of 
+selection for change the status to.  The list of selection will vary depend on user permission, the defect creator and assignee.
+
+Since we can not change the status to assigned or not assgined (it'll be based on assignee field).  We uses a derived status called Pending.
+When user change the defect status to pending.  The defect will actually show assigned (if assignee team is not empty) or not assigned (if assignee team is empty)
 
 * Pending ("Assigned" or "Not Assigned") when:
     * Current status of the record is equal to In-Progress, Inspect Now OR Rejected AND:
@@ -109,7 +117,6 @@ there are 8 validators can be applied to a template
         * i.e. for location like 'site', 'structure', 'level', 'room', END_LEVEL_DISPLAY = 3 only 'site', 'structure', 'level' are displayed in the selector
 
 <a name="template-type"/>
-
 There are 5 type of template field
 
 * INPUT - single line of text
