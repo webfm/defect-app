@@ -18,18 +18,6 @@ value list include Locations, categories and Lists
     * label
     * children - a list contain a number of value list item
 
-<a name="status"/>
-Status
-------
-
-* A defect record will display one of the following six statuses:
-    * Not Assigned
-    * Assigned
-    * In-Progress
-    * Inspect Now
-    * Rejected
-    * Closed
-
 <a name="privileges"/>
 Privileges
 ----------
@@ -52,6 +40,25 @@ there are 10 priviledges
 * DEFECTS_FIX – see Status Changes.
 * DEFECTS_CLOSE – see Status Changes.
 * DEFECTS_VIEW_ALL – see Status Changes.
+
+<a name="status"/>
+Status
+------
+
+* Defect status field will contain one of the 5 status:
+    * pending
+    * rejected
+    * in_progress
+    * submitted
+    * closed
+
+* A defect record will display one of the following six statuses:
+    * Not Assigned - defect have *pending* status, assignee team is empty
+    * Assigned - defect have *pending* status assignee team is not empty
+    * In-Progress - defect have *in_progress* status
+    * Inspect Now - defect have *submitted* status
+    * Rejected - defect have *rejected* status
+    * Closed - defect have *closed* status
 
 <a name="status-change"/>
 Status Changes
