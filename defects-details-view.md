@@ -1,7 +1,7 @@
 Defects Detail View, Edit View
 ==============================
 
-screenshot http://db.tt/HNhcdwdh
+[view screenshot](http://db.tt/HNhcdwdh "view screenshot")
 
 dynamic fields
 --------------
@@ -35,8 +35,29 @@ From the api, tempate.type define the way field is displayed
 * DOCUMENTS - document field is displayed as a list of icons see [screenshot](http://db.tt/AloUr4wF "screenshot")
     * if the document is an image display the image
     * if the document is not an image use show [this icon](http://www.iconfinder.com/icons/3784/download/png/128 "icon")
-    
 
+static fields
+-------------
 
-
-
+* defect status - match status field in the site-issues api. 
+    * status is displayed as the status button
+    * see [status](definitions.md#status ""status) for status definition and how to display definitions
+    * see [status change](definitions.md#status-changes "status change") for how to change status
+    * defect status is displayed right next to the first dyanic field (in view screenshot next to short description)
+* assignee
+    * assignee field displays the value from site-issues api assignee.name
+    * assignee field is displayed as the second field after the 1st dyanmic field (dyanimc field with sort = 1)
+    * assignee field maybe empty (not assignee field from api call), if assignee is empty:
+        * in details view do not show assignee field
+        * in edit view show assignee field as empty
+    * edit assignee field requires permission [defintion.md](definitions.md#privileges "defintion.md")
+    * when edit assignee field, a popover is shown display a list of teams in from the [project-data api](project-data.md "project-data api")
+        * table view show team.name
+        * set defect.assignee field to team.id
+* due date
+    * due date field display the value from site-issues api due
+    * not every site issue have due date (due date field not present in api call result)
+    * if due date is empty
+        * in details view do not show due date
+        * in edit view show empty due date
+    * edit due date field requires permission [defintion.md](definitions.md#privileges "defintion.md")
