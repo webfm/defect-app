@@ -18,6 +18,10 @@ API
 * [Project Data](project-data.md "Project List")
 * [Issue Data](issue-data.md "Project List")
 
+Views explaination
+------------------
+* [Defect details view, edit view](defect-details-view.md "Defect details view, edit view")
+
 Term and Definitions
 --------------------
 * for explaination on some of the terms and data defintions see [here](definitions.md "Definitions")
