@@ -10,7 +10,7 @@ from the project data api call we will get this block for documents
         "type": "DOCUMENT"
     },
 
-this indicate that the tempatle field is a document field and the template id is g808
+this indicate that the template field is a document field and the template id is g808
 
 
 now we have a look at the issue data api
@@ -71,7 +71,7 @@ in side the document field value we find blocks indicate documents attached to t
 
 The document data is used in defect details view and edit view.
 
-* for image docuemnt we have to display the image in defect document view using uiimageview (api for download document will be done later)
+* for image document we have to display the image in defect document view using UIImageView (api for download document will be done later)
     * see this document for [compatible extension type](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIImage_Class/Reference/Reference.html)
 * for another documents display a icon from [there](defect-details-view.md#doc-icon)
 

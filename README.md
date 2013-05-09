@@ -24,7 +24,7 @@ Views explaination
 
 Term and Definitions
 --------------------
-* for explaination on some of the terms and data defintions see [here](definitions.md "Definitions")
+* for explanation on some of the terms and data definitions see [here](definitions.md "Definitions")
 
 I've done a few in detailed example here
 

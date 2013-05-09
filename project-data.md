@@ -275,8 +275,8 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
 * project - project name, id
 * template - defects fields for the project
     * sort - sort order
-    * field - field id used in OMTrak system, the field value will match a element in defect data. Field is used for all tempalte types except SELECT
-    * prefix - the prefix value will match a elemnt in defect data (from defect list api call).  Prefix is used for template SELECT type
+    * field - field id used in OMTrak system, the field value will match a element in defect data. Field is used for all template types except SELECT
+    * prefix - the prefix value will match a element in defect data (from defect list api call).  Prefix is used for template SELECT type
     * label - name of the field
     * type - field type
         * see [here](definitions.md#template-type "definition") for detail
@@ -285,7 +285,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
             * CATEGORIES - use category value list as source for selector
             * LOCATIONS - use location value list as source for selector
             * VALUE_LIST - use values in list
-        * id - only used for VALUE_LIST type, matchs lists.first element
+        * id - only used for VALUE_LIST type, matches lists.first element
     * validators - validator for a field
     * [find out how template should be displayed](defect-details-view.md)
 * categories - category list for defect, used for template.source.type = "CATEGORIES"
@@ -293,7 +293,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
         * label - display name,
         * field - used in sync data,
         * sort - sort order
-    * value - values for cateogry hierarchy
+    * value - values for category hierarchy
         * id - identity of hierarchy value
         * label - used for display
         * children - children of this value for building hierarchies
@@ -303,7 +303,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
         * label - display name,
         * field - used in sync data,
         * sort - sort order
-    * value - values for cateogry hierarchy
+    * value - values for category hierarchy
         * id - identity of hierarchy value
         * label - used for display
         * children - children of this value for building hierarchies
@@ -312,14 +312,14 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
 * lists
     * id - list id expressed as id value
         * this value matches template.source.id
-        * in the example there is a tempate with template.source.type = VALUE_LIST, template.source.type = 1. this matches list.1
+        * in the example there is a template with template.source.type = VALUE_LIST, template.source.type = 1. this matches list.1
         * labels - meta data for each list hierarchy level
             * label - display name,
             * field - used in sync data,
             * sort - sort order
     * for details see [Value List](definitions.md#value-list "Value List")
     * for example see [List Example](list-example.md "List Example")
-* teams - if a user have assign priviledge, he can assign the defect to a team which is listed here
+* teams - if a user have assign privilege, he can assign the defect to a team which is listed here
 * privileges - privileges for current user
     * see [Privileges](definitions.md#privileges "Privileges") for more detail
 

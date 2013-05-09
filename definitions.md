@@ -10,7 +10,7 @@ value list include Locations, categories and Lists
     * labels - describe the structure of value list, heading for each hierarchy level
     * value - value of each value list item
 * labels contains
-    * sort - order of hierachy level heading
+    * sort - order of hierarchy level heading
     * field - field id (don't need to use this field)
     * label - label for hierarchy level heading
 * a value list item have the follow structure
@@ -22,7 +22,7 @@ value list include Locations, categories and Lists
 Privileges
 ----------
 
-there are 10 priviledges
+there are 10 privileges
 
 * DEFECTS – if a user has access to the defect module. IGNORE THIS PERMISSION.
 * DEFECTS_CREATE – if a user can create a defect.
@@ -70,7 +70,7 @@ A status button is used to both allow user change the status
 and show the current status (currently shown as assigned). When user tap on the status button, a popover will appear giving user a list of 
 selection for change the status to.  The list of selection will vary depend on user permission, the defect creator and assignee.
 
-Since we can not change the status to assigned or not assgined (it'll be based on assignee field).  We uses a derived status called Pending.
+Since we can not change the status to assigned or not assigned (it'll be based on assignee field).  We uses a derived status called Pending.
 When user change the defect status to pending.  The defect will actually show assigned (if assignee team is not empty) or not assigned (if assignee team is empty)
 
 * Pending ("Assigned" or "Not Assigned") when:
@@ -109,10 +109,10 @@ Validators
 
 there are 8 validators can be applied to a template
 
-* validators for tempalte.type INPUT
+* validators for template.type INPUT
     * DECIMAL - decimal number
     * WHOLE_NUMBER - whole number not decimal
-* validators for tempalte.type - INPUT, EDITOR
+* validators for template.type - INPUT, EDITOR
     * REQUIRED
     * UNIQUE
     * MAXIMUM_LENGTH

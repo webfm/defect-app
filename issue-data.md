@@ -73,7 +73,7 @@ https://secure.omtrak.com/v2/projects/8/site-works?access_token=TGT-59-5syfp0PaY
     * CLOSED
 * a123 - link to a project template
     * links to Project Data template.prefix for SELECT type
-    * links to Project Date template.field for all excpet SELECT type
+    * links to Project Date template.field for all except SELECT type
 * logs - logs for issue
     * date - recorded date
     * type - log type (we don't have to display this)

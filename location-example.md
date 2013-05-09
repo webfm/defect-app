@@ -66,9 +66,9 @@ the blocks are simplified to make it easy to read
 
 In template block we have template field called Location (from label) that of type SELECT, and source.type is LOCATINOS.
 
-The tempalte.type indicate it's a value list field and tempalte.source.type indicate that it uses locations value list for selection values (block of locations from project data api)
+The template.type indicate it's a value list field and template.source.type indicate that it uses locations value list for selection values (block of locations from project data api)
 
-The tempalte.prefix has value h806,  this value links to an element in issue data block ("h806": 14720).
+The template.prefix has value h806,  this value links to an element in issue data block ("h806": 14720).
 
 The value of the element 14720 links to the id of a value list item in location value list
 
