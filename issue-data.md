@@ -15,7 +15,7 @@ Parameters
 Example
 -------
 
-https://secure.omtrak.com/v2/projects/8/site-works?account=6
+https://secure.omtrak.com/v2/projects/8/site-works?access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w
 
     [
         {
@@ -30,6 +30,13 @@ https://secure.omtrak.com/v2/projects/8/site-works?account=6
             "h3540": 2,
             "g805": "Broken Window",
             "g807": "Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
+            "g808": [
+                {
+                    "id": 12968,
+                    "name": "selection popover",
+                    "extension": "png"
+                }
+            ],
             "logs": [
                 {
                     "date": "2013-04-23T06:58:32Z",

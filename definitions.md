@@ -130,4 +130,10 @@ There are 5 type of template field
 * EDITOR - multiple line of text
 * DATE - stores date
 * SELECT - stores value list hierarchy
+    * [see location example](location-example.md)
+    * [see list example](list-example.md)    
 * DOCUMENTS - store files 
+    * [see example](document-example.md)
+
+[click here](defect-details-view.md) for how template type should be displayed
+

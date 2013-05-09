@@ -16,7 +16,7 @@ Parameters
 Example
 -------
 
-https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
+https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w&data=true
 
     {
         "project": {
@@ -287,6 +287,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&account=6&data=true
             * VALUE_LIST - use values in list
         * id - only used for VALUE_LIST type, matchs lists.first element
     * validators - validator for a field
+    * [find out how template should be displayed](defect-details-view.md)
 * categories - category list for defect, used for template.source.type = "CATEGORIES"
     * labels - meta data for each list hierarchy level
         * label - display name,

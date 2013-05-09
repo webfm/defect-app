@@ -13,7 +13,7 @@ Parameters
 
 ### Example ###
 
-https://secure.omtrak.com/v2/projects?module=defects&account=6
+https://secure.omtrak.com/v2/projects?module=defects&access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w
 
     [
         {
