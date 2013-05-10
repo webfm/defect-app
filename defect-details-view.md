@@ -3,7 +3,8 @@ Defects Detail View, Edit View
 
 [view screenshot](http://db.tt/HNhcdwdh "view screenshot")
 
-dynamic fields
+<a name="dynamic-fields"/>
+Dynamic fields
 --------------
 
 Dynamic fields are generated based on [Project Data API](project-data.md "Project Data").  
@@ -40,7 +41,8 @@ From the api, template.type define the way field is displayed
     * document view will have take photo icon in edit view
     * take photo behavior can be [found here](photo-annotation.md)
 
-static fields
+<a name="static-fields"/>
+Static fields
 -------------
 
 * defect status - match status field in the site-issues api. 
