@@ -1,7 +1,8 @@
 photo & annotation
 ==================
 
-* when taking photo, user tap on the take photo icon, this will bring up the [camera view](https://www.dropbox.com/s/xc43aopyzjtpwdf/taking-photo.png)
+* when taking photo, user tap on the take photo icon this will bring up the camera view
+    * [screen shot ](https://www.dropbox.com/s/xc43aopyzjtpwdf/taking-photo.png)
 * the camera view only uses the front camera, (we don't need toggle camera icon)
 * once user took the photo and tap on use button (use photo) the app will take user to the photo annotation view
 * the photo annotation view should look like [this](http://db.tt/zGMGl2yW)

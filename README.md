@@ -21,6 +21,7 @@ API
 Views explaination
 ------------------
 * [Defect details view, edit view](defect-details-view.md "Defect details view, edit view")
+* [Annotation view](photo-annotation.md)
 
 Term and Definitions
 --------------------
