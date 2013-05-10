@@ -36,7 +36,7 @@ From the api, template.type define the way field is displayed
         * i.e. the currently [location selector](http://db.tt/jGnBAqMc "location selector")
 * DOCUMENTS - document field is displayed as a list of icons see [screenshot](http://db.tt/AloUr4wF "screenshot")
     * if the document is an image display the image
-    * <a name="doc-icon"/> if the document is not an image use show [this icon](http://www.iconfinder.com/icons/3784/download/png/128 "icon")
+    * <a name="doc-icon"/> if the document is not an image use show [this icon](https://www.dropbox.com/s/ioyoz0ka5wqnjzn/document-icon.png "icon")
     * document view will have take photo icon in edit view
     * take photo behavior can be [found here](photo-annotation.md)
 
