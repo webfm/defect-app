@@ -8,6 +8,7 @@ Dynamic fields
 --------------
 
 Dynamic fields are generated based on [Project Data API](project-data.md "Project Data").  
+
 From the api, template.type define the way field is displayed 
 * INPUT - UITextInput
     * when user enter more text into the UITextInput
@@ -32,14 +33,14 @@ From the api, template.type define the way field is displayed
             * Structure : eavey Vehicle Workshop (BW/HVW)
             * Level : Ground (GF)
             * Space : Workshop (G-01)
-        * [how to display SELECT field](defect-details-view.md#generate-view)
+        * [how to generate SELECT field for display](defect-details-view.md#generate-view)
     * when user tap on any of the field for a SELECT we will show the same selector what contain all hierarchy level
         * i.e. the currently [location selector](http://db.tt/jGnBAqMc "location selector")
-* DOCUMENTS - document field is displayed as a list of icons see [screenshot](http://db.tt/AloUr4wF "screenshot")
+* DOCUMENTS - document fields are displayed as a [list of icons](http://db.tt/AloUr4wF "screenshot")
     * if the document is an image display the image
-    * <a name="doc-icon"/> if the document is not an image use show [this icon](https://www.dropbox.com/s/ioyoz0ka5wqnjzn/document-icon.png "icon")
-    * document view will have take photo icon in edit view
-    * take photo behavior can be [found here](photo-annotation.md)
+    * <a name="doc-icon"/> if the document is not an image, [use this icon](https://www.dropbox.com/s/ioyoz0ka5wqnjzn/document-icon.png "icon")
+    * document view will have "take photo icon" in edit view
+    * [take photo behavior](photo-annotation.md)
 
 <a name="static-fields"/>
 Static fields
@@ -47,8 +48,8 @@ Static fields
 
 * defect status - match status field in the site-issues api. 
     * status is displayed as the status button
-    * see [status](definitions.md#status ""status) for status definition and how to display definitions
-    * see [status change](definitions.md#status-changes "status change") for how to change status
+    * [see status](definitions.md#status ""status) for status definition and how to display definitions
+    * [see status change](definitions.md#status-changes "status change") for how to change status
     * defect status is displayed right next to the first dyanic field (in view screenshot next to short description)
 * assignee
     * assignee field displays the value from site-issues api assignee.name
@@ -56,8 +57,8 @@ Static fields
     * assignee field maybe empty (not assignee field from api call), if assignee is empty:
         * in details view do not show assignee field
         * in edit view show assignee field as empty
-    * edit assignee field requires permission [defintion.md](definitions.md#privileges "defintion.md")
-    * when edit assignee field, a popover is shown display a list of teams in from the [project-data api](project-data.md "project-data api")
+    * to edit assignee field [requires permission](definitions.md#privileges "defintion.md")
+    * when edit assignee field, a popover is displayed to show a list of teams from the [project-data api under teams](project-data.md "project-data api")
         * table view show team.name
         * set defect.assignee field to team.id
 * due date
@@ -66,4 +67,5 @@ Static fields
     * if due date is empty
         * in details view do not show due date
         * in edit view show empty due date
-    * edit due date field requires permission [defintion.md](definitions.md#privileges "defintion.md")
+    * if due date is not empty displays as "dd MMM yyyy"
+    * to edit due date field requires permission [defintion.md](definitions.md#privileges "defintion.md")
