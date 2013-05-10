@@ -1,7 +1,7 @@
 Defects Detail View, Edit View
 ==============================
 
-[view screenshot](http://db.tt/HNhcdwdh "view screenshot")
+[screen shot](http://db.tt/HNhcdwdh "view screenshot")
 
 <a name="dynamic-fields"/>
 Dynamic fields
