@@ -20,6 +20,7 @@ API
 
 Views explaination
 ------------------
+* [Filter & Sort](filter-sort.md "location filter, filter, sort")
 * [Defect details view, edit view](defect-details-view.md "Defect details view, edit view")
 * [Annotation view](photo-annotation.md)
 
