@@ -1,4 +1,4 @@
-filter & sort
+Filter & Sort
 =============
 
 <a name="location-filter"/>
