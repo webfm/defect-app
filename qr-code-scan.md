@@ -1,6 +1,8 @@
-QR code
-=======
+QR code Scan
+============
 
+QR Code format
+--------------
 QR code scanner will read qr codes produced by OMTrak.  The code will have the following formatter
 
     https://secure.omtrak.com/:project_slug/locations/:id
@@ -11,5 +13,17 @@ For example:
 
 The url representation is used so if people scan with any barcode scanner they can visit a valid website and get information about the product.
 
-For the app we can read the last block :id to obtain ids for location.  For example, we can split the string using "/" as delimiter and get the last block of text and parse it into an int.
+For the app we can read the last block :id to obtain ids for location.  
+For example, we can split the string using "/" as delimiter and get the last block of text and parse it into an int.
+
+Scan QR Code
+------------
+
+The app uses QR code in two places
+
+### Location filter
+
+When user tap on the location filter, a location  selector is presented.  On the Location selector, there is a camera icon.
+When user tap on the camera, the camera view is presented.  User can then scan the QR code which return a string that conforms
+to the QR code format.  The app then parse the string and select the location accordingly.
 
