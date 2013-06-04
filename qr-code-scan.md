@@ -19,11 +19,13 @@ For example, we can split the string using "/" as delimiter and get the last blo
 Scan QR Code
 ------------
 
-The app uses QR code in two places
+The app uses QR code in three places
 
-### Location filter
+* Location Filter
+* Edit Defect -> Location selector
+* New Defect -> Location selector
 
-When user tap on the location filter, a location  selector is presented.  On the Location selector, there is a camera icon.
-When user tap on the camera, the camera view is presented.  User can then scan the QR code which return a string that conforms
+In each place, a Locatio Selector is presented to the user.  In the Location Selector user can tap on the camera icon
+to present the scan view.  User can then scan the QR code which return a string that conforms
 to the QR code format.  The app then parse the string and select the location accordingly.
 
