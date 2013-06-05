@@ -16,6 +16,21 @@ The url representation is used so if people scan with any barcode scanner they c
 For the app we can read the last block :id to obtain ids for location.  
 For example, we can split the string using "/" as delimiter and get the last block of text and parse it into an int.
 
+QR Code Example
+---------------
+
+    https://secure.omtrak.com/demo-test-project/locations/18568
+    Orange (OR) >> Building A (BA) >> Level 1 (L1)
+![QR code](https://webfm-website.s3.amazonaws.com/18568.png)
+
+    https://secure.omtrak.com/demo-test-project/locations/14725
+    Blackwater Mine (BW) >> Heavey Vehicle Workshop (BW/HVW) >> Ground (GF) >> Lube Reel - D23 (G-05)
+![QR code](https://webfm-website.s3.amazonaws.com/14725.png)
+
+    https://secure.omtrak.com/demo-test-project/locations/5
+    London (LD) 
+![QR code](https://webfm-website.s3.amazonaws.com/5.png)
+
 Scan QR Code
 ------------
 
