@@ -20,7 +20,7 @@ This field is optional but the value is assumed false which will cause the ticke
 
 **Response**
 
-Success Response
+Success response
 
 * Response Code 201
 * Authentication ticket in header "Location"
@@ -29,7 +29,7 @@ Success Response
 
 * Authentication ticket in response body in JSON format
 
-    {"ticket":":token"}
+    {"ticket":":authentication_token"}
 
 Failed response
 
@@ -37,7 +37,7 @@ Failed response
 
 Subquent API cal will need to add autentication ticket within the call parameter i.e.
 
-    tps://accounts.webfm.net/oauth2.0/profile?access_token="ticket
+    tps://accounts.webfm.net/oauth2.0/profile?access_token=:ticket
 
 Obtain user profile
 -------------------
