@@ -1,7 +1,7 @@
 Project List
 ============
 
-GET https://secure.omtrak.com/v2/projects?module=:module_name&account=:account_id
+GET https://secure.omtrak.com/v2/projects?module=:module_name&access_token=:ticket
 
 Returns a list of projects the user have access to. If the module parameter is set, it will only return the projects where the user have access to the specified module.
 

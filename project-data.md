@@ -1,7 +1,7 @@
 Project Data
 ============
 
-GET https://secure.omtrak.com/v2/projects/:project_id/?module=:module_name&data=:boolean_value&account=:account_id
+GET https://secure.omtrak.com/v2/projects/:project_id/?module=:module_name&data=:boolean_value&access_token=:ticket
 
 Returns project data and (optionally) project metadata for project_id.
 

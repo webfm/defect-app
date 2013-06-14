@@ -1,7 +1,7 @@
 Issue data
 ==========
 
-GET https://secure.omtrak.com/v2/projects/:project_id/defects?account=:account_id
+GET https://secure.omtrak.com/v2/projects/:project_id/defects?access_token=:ticket
 
 Returns issues in a project.
 
