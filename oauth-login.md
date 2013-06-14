@@ -1,12 +1,12 @@
 oAuth login
 ===========
 
-The system uses oAuth 2.0 for api authentication.  To Login We need to use the follow Steps
+The system uses oAuth 2.0 for api authentication.  To login We need to take the following steps:
 
 Reqest authentication ticket
 ----------------------------
 
-The first step to login is to request a authenication ticket from the server
+First login and obtain a authentication ticket.
 
     Post https://accounts.webfm.net/v2/access/tickets
 
