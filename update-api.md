@@ -1,5 +1,5 @@
-Update api (DRAFT)
-==================
+Update api
+==========
 
 Description
 -----------
@@ -21,102 +21,90 @@ to be passed to the server
 update api example (to be amended later)
 ----------------------------------------
 
-https://secure.omtrak.com/v2/projects/8/site-works/update?access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w
+We're trying to create a REST API which uses the following CRUD mapping:
 
-posted payload
+Create -> Post
+Read -> Get
+Update -> Put
+Delete -> Delete
 
-    [
-        {
-            "id": 229,
-            "uid": "#ISS1",
-            "status": "CLOSED",
-            "assignee": {
-                "id": 66,
-                "name": "WebFM"
-            },
-            "h806": 3,
-            "h3540": 2,
-            "g805": "Broken Window",
-            "g807": "Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
-            "g808": [
-                {
-                    "id": 12968,
-                    "name": "selection popover",
-                    "extension": "png"
-                }
-            ],
-            "logs": [
-                {
-                    "date": "2013-04-23T06:58:32Z",
-                    "type": "UPDATE",
-                    "message": "Charlie Wu updated the issue."
-                },
-                {
-                    "date": "2013-04-24T00:04:05Z",
-                    "type": "COMMENT",
-                    "message": "Charlie Wu added a comment.",
-                    "comment": "hey thing is not fixed, what happened"
-                },
-                {
-                    "date": "2013-04-16T01:21:17Z",
-                    "type": "STATUS_CHANGE_IN_PROGRESS",
-                    "message": "Zhongtao Ren (OMTrak Support) changed the status to In-Progress."
-                },
-                {
-                    "date": "2013-04-08T06:47:40Z",
-                    "type": "CREATE",
-                    "message": "Zhongtao Ren (OMTrak Support) created the issue."
-                }
-            ]
-        }
-    ]
+CREATE
+======
 
-return payload
+The creation web service will be something like:
+
+POST https://secure.omtrak.com/v2/projects/8/site-works?access_token=xxyyzz
+
+    {
+        "assignee": 66,
+        "due": "2013-01-01T12:00:00Z",
+        "h806": 3,
+        "h3540": 2,
+        "g805": "Broken Window",
+        "g807": "Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
+        "g809": 12968
+    }
+
+ADD COMMENT
+===========
+
+POST https://secure.omtrak.com/v2/projects/8/site-works/123/comments?access_token=xxyyzz
+
+    {
+        "comment": "Blah blah blah"
+    }
+
+UPDATE
+======
+
+The update web service will be something like:
+
+PUT https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
+
+    {
+        "id": 123,
+        "assignee": 66,
+        "due": "2013-01-01T12:00:00Z",
+        "h806": 3,
+        "h3540": 2,
+        "g805": "Broken Window",
+        "g807": "Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
+        "g809": 12968
+    }
+
+CHANGE STATUS
+=============
+
+PUT https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
+
+    {
+        "status": "IN_PROGRESS",
+        "comment": "This is the reason for rejection." // In case of rejection
+    }
+
+DELETE
+======
+
+The delete web service will be something like:
+
+DELETE https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 
 
-    [
-        {
-            "id": 229,
-            "uid": "#ISS1",
-            "status": "CLOSED",
-            "assignee": {
-                "id": 66,
-                "name": "WebFM"
-            },
-            "h806": 3,
-            "h3540": 2,
-            "g805": "Broken Window updated",
-            "g807": "UPDATED - Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
-            "g808": [
-                {
-                    "id": 12968,
-                    "name": "selection popover",
-                    "extension": "png"
-                }
-            ],
-            "logs": [
-                {
-                    "date": "2013-04-23T06:58:32Z",
-                    "type": "UPDATE",
-                    "message": "Charlie Wu updated the issue."
-                },
-                {
-                    "date": "2013-04-24T00:04:05Z",
-                    "type": "COMMENT",
-                    "message": "Charlie Wu added a comment.",
-                    "comment": "hey thing is not fixed, what happened"
-                },
-                {
-                    "date": "2013-04-16T01:21:17Z",
-                    "type": "STATUS_CHANGE_IN_PROGRESS",
-                    "message": "Zhongtao Ren (OMTrak Support) changed the status to In-Progress."
-                },
-                {
-                    "date": "2013-04-08T06:47:40Z",
-                    "type": "CREATE",
-                    "message": "Zhongtao Ren (OMTrak Support) created the issue."
-                }
-            ]
-        }
-    ]
 
+POST https://secure.omtrak.com/v2/projects/8/site-works/123/documents?access_token=xxyyzz
+
+[Multi-Part]
+
+Result:
+
+HTTP STATUS 201
+
+{
+id: 3456,
+name: "DCIM-0001",
+extension: "jpg"
+}
+
+REMOVE DOCUMENT
+
+DELETE https://secure.omtrak.com/v2/projects/8/site-works/123/documents/3456?access_token=xxyyzz

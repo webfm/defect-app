@@ -26,17 +26,27 @@ there are 10 privileges
 
 * DEFECTS – if a user has access to the defect module. IGNORE THIS PERMISSION.
 * DEFECTS_CREATE – if a user can create a defect.
-    * If a user doesn't have the defects create permission, then in defect list view, the add new defect button will be hidden.
+    * If a user doesn't have the defects create permission, then in defect list view, 
+      the add new defect button will be hidden.
 * DEFECTS_ASSIGN – if a user can assign the defect to a team.
-    * If a user doesn't have defect assign permission, then in defect edit view (http://db.tt/anFvB5TT), the assignee field will not be editable (it will be hidden in the edit view).
+    * If a user doesn't have defect assign permission, then in defect edit view add add defect view
+      (http://db.tt/anFvB5TT), the assignee field will not be editable 
+      (it will be hidden in the edit view and add view).
 * DEFECTS_DELETE – if a user can delete the defect.
-    * A user must have the delete permission AND be either the creator OR have both View All and Edit All privileges to be able to delete a task. Otherwise, the delete button will be hidden.
+    * A user must have the delete permission AND be either the creator OR have both View All 
+      and Edit All privileges to be able to delete a task. Otherwise, the delete button will be hidden.
 * DEFECTS_ADD_COMMENT – if a user can add comments.
-    * If a user doesn't have the add comment permission, then in comment view (http://db.tt/UawQ5Pzi), the add comment button will be hidden.
+    * If a user doesn't have the add comment permission, 
+      then in comment view (http://db.tt/UawQ5Pzi), 
+      the add comment button will be hidden.
 * DEFECTS_SET_DUE_DATE – if a user can set the due date of the defect.
-    * If a user doesn't have this permission, then in defect edit view, the due date field not be editable (it will be hidden in the edit view).
+    * If a user doesn't have this permission, then in defect edit view and add defect view, 
+      the due date field not be editable (it will be hidden in the edit view and add defect view).
 * DEFECTS_EDIT_ALL – if a user can edit all defects.
-    * By default, a user can only edit the regular fields of a defect record (all the fields except for assignee, due date and status) if the user is the creator of the record. If a user has the edit all permission, the user will be able to edit the regular fields of all the defects he has access to.
+    * By default, a user can only edit the regular fields of a defect record 
+      (all the fields except for assignee, due date and status) if the user is the creator of the 
+      record. If a user has the edit all permission, the user will be able to edit the regular 
+      fields of all the defects he has access to.
 * DEFECTS_FIX – see Status Changes.
 * DEFECTS_CLOSE – see Status Changes.
 * DEFECTS_VIEW_ALL – see Status Changes.
