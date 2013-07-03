@@ -55,7 +55,7 @@ Status
 * A defect record will display one of the following six statuses:
     * Not Assigned - defect have **pending** status, assignee team is empty
     * Assigned - defect have **pending** status assignee team is not empty
-    * In-Progress - defect have **in_progress** status
+    * In Progress - defect have **in_progress** status
     * Inspect Now - defect have **submitted** status
     * Rejected - defect have **rejected** status
     * Closed - defect have **closed** status
