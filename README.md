@@ -18,11 +18,13 @@ API
 * [Project List](project-list.md "Project List")
 * [Project Data](project-data.md "Project Data")
 * [Issue Data](issue-data.md "Project List")
+* [Defect Upload](update-api.md "Update API")
 
 Views explaination
 ------------------
 * [Filter & Sort](filter-sort.md "location filter, filter, sort")
 * [Defect details view, edit view](defect-details-view.md "Defect details view, edit view")
+* [User Permissions](defect-permission.md)
 * [Annotation view](photo-annotation.md)
 * [QR Code](qr-code-scan.md)
 
