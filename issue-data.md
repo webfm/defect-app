@@ -10,12 +10,12 @@ Parameters
 
 * project: project id.
     * required
-* account: *[temporary]* used for login while oauth is implemented. Only works for account equal to 6.
+* access_token: Access Token obtained from [login](oauth-login.md)
 
 Example
 -------
 
-https://secure.omtrak.com/v2/projects/8/site-works?access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w
+https://secure.omtrak.com/v2/projects/8/site-works?access_token=xxxxxx
 
     [
         {

@@ -1,7 +1,7 @@
 Project Data
 ============
 
-GET https://secure.omtrak.com/v2/projects/:project_id/?module=:module_name&data=:boolean_value&access_token=:ticket
+GET https://secure.omtrak.com/v2/projects/:project_id/?module=defects&data=:boolean_value&access_token=:ticket
 
 Returns project data and (optionally) project metadata for project_id.
 
@@ -11,12 +11,12 @@ Parameters
     * required
 * module: for now, it should always be set to "defects"
 * data: true or false, whether to return the metadata related to the project.
-* account: *[temporary]* used for login while oauth is implemented. Only works for account equal to 6.
+* access_token: Access Token obtained from [login](oauth-login.md)
 
 Example
 -------
 
-https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w&data=true
+https://secure.omtrak.com/v2/projects/8?module=defects&access_token=xxxxxx&data=true
 
     {
         "project": {

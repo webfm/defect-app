@@ -1,7 +1,7 @@
 Project List
 ============
 
-GET https://secure.omtrak.com/v2/projects?module=:module_name&access_token=:ticket
+GET https://secure.omtrak.com/v2/projects?module=defects&access_token=:ticket
 
 Returns a list of projects the user have access to. If the module parameter is set, it will only return the projects where the user have access to the specified module.
 
@@ -13,7 +13,7 @@ Parameters
 
 ### Example ###
 
-https://secure.omtrak.com/v2/projects?module=defects&access_token=TGT-59-5syfp0PaYVBLLldwsQeGYzg5ZDeDdTebbky0vHHjJbL06lUcc0-uQT19h4w
+https://secure.omtrak.com/v2/projects?module=defects&access_token=xxxxxx
 
     [
         {

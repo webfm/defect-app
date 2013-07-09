@@ -40,7 +40,7 @@ The app uses QR code in three places
 * Edit Defect -> Location selector
 * New Defect -> Location selector
 
-In each place, a Locatio Selector is presented to the user.  In the Location Selector user can tap on the camera icon
+In each place, a Location Selector is presented to the user.  In the Location Selector user can tap on the camera icon
 to present the scan view.  User can then scan the QR code which return a string that conforms
 to the QR code format.  The app then parse the string and select the location accordingly.
 
