@@ -245,7 +245,11 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
                 "label": "Documents",
                 "type": "DOCUMENT"
             }
-        ],
+        ],    
+        "team": {  
+            "id": 159,
+            "name": "Orange & Bronze"
+        },
         "teams": [
             {
                 "id": 233,
@@ -319,6 +323,7 @@ https://secure.omtrak.com/v2/projects/8?module=defects&access_token=TGT-59-5syfp
             * sort - sort order
     * for details see [Value List](definitions.md#value-list "Value List")
     * for example see [List Example](list-example.md "List Example")
+* team - the team the logged in user belong to
 * teams - if a user have assign privilege, he can assign the defect to a team which is listed here
 * privileges - privileges for current user
     * see [Privileges](definitions.md#privileges "Privileges") for more detail

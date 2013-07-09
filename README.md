@@ -25,6 +25,7 @@ Views explaination
 * [Defect details view, edit view](defect-details-view.md "Defect details view, edit view")
 * [Annotation view](photo-annotation.md)
 * [QR Code](qr-code-scan.md)
+
 Term and Definitions
 --------------------
 * for explanation on some of the terms and data definitions see [here](definitions.md "Definitions")
