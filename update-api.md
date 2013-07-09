@@ -11,15 +11,13 @@ When app is syncing with the server, the update api must be called first if ther
 accept a list of defects from the app, update them and resolve any conflicts.  The server will then respond with a list of defect for 
 the app to update (if the app have defects that contain the same id, we need to update those defect with values from server)
 
-(NOTE how to resolve unique validator conflict? will server auto resolve conflict?)
-
 The app also need to send any new or updated documents to the server, the api will accept single document upload, the document id also need
 to be passed to the server 
 
 (NOTE we can't rename document in the app, so we only need id, file name and extension can be read from file for new files)
 
-update api example (to be amended later)
-----------------------------------------
+update api example 
+------------------
 
 We're trying to create a REST API which uses the following CRUD mapping:
 
@@ -89,7 +87,8 @@ The delete web service will be something like:
 
 DELETE https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 
-
+UPLOAD DOCUMENT
+===============
 
 POST https://secure.omtrak.com/v2/projects/8/site-works/123/documents?access_token=xxyyzz
 
@@ -97,14 +96,15 @@ POST https://secure.omtrak.com/v2/projects/8/site-works/123/documents?access_tok
 
 Result:
 
-HTTP STATUS 201
+    HTTP STATUS 201
 
-{
-id: 3456,
-name: "DCIM-0001",
-extension: "jpg"
-}
+    {
+        id: 3456,
+        name: "DCIM-0001",
+        extension: "jpg"
+    }
 
 REMOVE DOCUMENT
+===============
 
 DELETE https://secure.omtrak.com/v2/projects/8/site-works/123/documents/3456?access_token=xxyyzz
