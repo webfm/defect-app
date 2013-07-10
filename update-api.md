@@ -21,10 +21,10 @@ update api example
 
 We're trying to create a REST API which uses the following CRUD mapping:
 
-Create -> Post
-Read -> Get
-Update -> Put
-Delete -> Delete
+Create -> Post  
+Read -> Get  
+Update -> Put  
+Delete -> Delete  
 
 CREATE
 ======
