@@ -42,22 +42,62 @@ https://secure.omtrak.com/v2/projects/8/site-works?access_token=xxxxxx
                     "date": "2013-04-23T06:58:32Z",
                     "type": "UPDATE",
                     "message": "Charlie Wu updated the issue."
+                    "account": {
+                        "id": 2,
+                        "email": "c.wu@webfm.net",
+                        "firstName": "Charlie",
+                        "lastName": "Wu"
+                    },
+                    "team": {
+                        "id": 233,
+                        "name": "WebFM Team"
+                    }
                 },
                 {
                     "date": "2013-04-24T00:04:05Z",
                     "type": "COMMENT",
                     "message": "Charlie Wu added a comment.",
                     "comment": "hey thing is not fixed, what happened"
+                    "account": {
+                        "id": 2,
+                        "email": "c.wu@webfm.net",
+                        "firstName": "Charlie",
+                        "lastName": "Wu"
+                    },
+                    "team": {
+                        "id": 233,
+                        "name": "WebFM Team"
+                    }
                 },
                 {
                     "date": "2013-04-16T01:21:17Z",
                     "type": "STATUS_CHANGE_IN_PROGRESS",
                     "message": "Zhongtao Ren (OMTrak Support) changed the status to In-Progress."
+                    "account": {
+                        "id": 2,
+                        "email": "z.ren@webfm.net",
+                        "firstName": "Zhongtao",
+                        "lastName": "Ren"
+                    },
+                    "team": {
+                        "id": 233,
+                        "name": "WebFM Team"
+                    }
                 },
                 {
                     "date": "2013-04-08T06:47:40Z",
                     "type": "CREATE",
                     "message": "Zhongtao Ren (OMTrak Support) created the issue."
+                    "account": {
+                        "id": 2,
+                        "email": "z.ren@webfm.net",
+                        "firstName": "Zhongtao",
+                        "lastName": "Ren"
+                    },
+                    "team": {
+                        "id": 233,
+                        "name": "WebFM Team"
+                    }
                 }
             ]
         }
@@ -96,3 +136,5 @@ https://secure.omtrak.com/v2/projects/8/site-works?access_token=xxxxxx
         * if log is type COMMET comment display "comment" as the detail in the table view
     * message - log message
         * if log is not type COMMET comment display "message" as the detail in the table view
+    * account - the creator of the log (id, email, first, and last name)
+    * team - team the created account belong to (id, name)
