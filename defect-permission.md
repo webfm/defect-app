@@ -46,8 +46,8 @@ or
 
 Change status
 -------------
-In Progress
-Inspect now
+**In Progress**  
+**Inspect now**
 
     DEFECTS_EDIT_ALL and
     DEFECTS_FIX
@@ -58,8 +58,8 @@ or
     DEFECTS_FIX
 
 
-Close 
-Rejected
+**Close**  
+**Rejected**
 
     DEFECTS_EDIT_ALL
     DEFECTS_CLOSE
@@ -70,8 +70,8 @@ or
     DEFECTS_CLOSE
 
 
-Assigned
-Not Assigned
+**Assigned**  
+**Not Assigned**
 
     Defect created by user's team 
     Defect in Close or Reject
@@ -88,7 +88,7 @@ Delete defect
 
     DEFECTS_EDIT_ALL
     DEFECTS_DELETE
-    
+
 or
 
     Defect created by user's team
