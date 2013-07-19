@@ -38,7 +38,9 @@ Edit defect change assignee
 
     defect created by user
     DEFECTS_ASSIGN
+
 or 
+
     DEFECTS_EDIT_ALL
     DEFECTS_ASSIGN
 
@@ -47,10 +49,12 @@ Change status
 In Progress
 Inspect now
 
-    DEFECTS_EDIT_ALL
+    DEFECTS_EDIT_ALL and
     DEFECTS_FIX
+
 or
-    if user's team is the assignee of the defect 
+
+    if user's team is the assignee of the defect  and
     DEFECTS_FIX
 
 
@@ -59,7 +63,9 @@ Rejected
 
     DEFECTS_EDIT_ALL
     DEFECTS_CLOSE
+
 or
+
     if defect is created by user 
     DEFECTS_CLOSE
 
@@ -70,7 +76,9 @@ Not Assigned
     Defect created by user's team 
     Defect in Close or Reject
     DEFECTS_CLOSE
+
 or
+
     Defect in Close or Reject
     DEFECTS_CLOSE
     DEFECTS_EDIT_ALL
@@ -80,7 +88,9 @@ Delete defect
 
     DEFECTS_EDIT_ALL
     DEFECTS_DELETE
+    
 or
+
     Defect created by user's team
     DEFECTS_DELETE
 
