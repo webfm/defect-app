@@ -49,12 +49,12 @@ Change status
 **In Progress**  
 **Inspect now**
 
-    DEFECTS_EDIT_ALL and
+    DEFECTS_EDIT_ALL 
     DEFECTS_FIX
 
 or
 
-    if user's team is the assignee of the defect  and
+    if user's team is the assignee of the defect
     DEFECTS_FIX
 
 
