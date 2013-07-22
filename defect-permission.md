@@ -21,7 +21,9 @@ Edit defect
 -----------
     
     defect created by user
+
 or 
+
     DEFECTS_EDIT_ALL
 
 Edit defect set due date
@@ -29,7 +31,9 @@ Edit defect set due date
 
     defect created by user
     DEFECTS_SET_DUE_DATE
+
 or 
+
     DEFECTS_EDIT_ALL
     DEFECTS_SET_DUE_DATE
 
