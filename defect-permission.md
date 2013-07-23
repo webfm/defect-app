@@ -70,7 +70,7 @@ or
 
 or
 
-    if defect is created by user 
+    if defect is created by user's team
     DEFECTS_CLOSE
 
 
