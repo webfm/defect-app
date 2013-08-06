@@ -27,6 +27,7 @@ Views explaination
 * [User Permissions](defect-permission.md)
 * [Annotation view](photo-annotation.md)
 * [QR Code](qr-code-scan.md)
+* [Data Sync](sync.md)
 
 Term and Definitions
 --------------------
