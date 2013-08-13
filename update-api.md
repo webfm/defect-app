@@ -103,6 +103,8 @@ UPLOAD DOCUMENT
 
 [Multi-Part]
 
+field name: document
+
 Result:
 
     HTTP STATUS 201
