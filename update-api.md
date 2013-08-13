@@ -87,10 +87,19 @@ The delete web service will be something like:
 
 DELETE https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 
+DOWNLAOD DOCUMENT
+=================
+
+    GET https://secure.omtrak.com/v2/projects/<project-id>/documents/<document-id>/download
+
+Thumbnails
+
+    GET https://secure.omtrak.com/v2/project-name/documents/id/download?size=thumbnail
+
 UPLOAD DOCUMENT
 ===============
 
-POST https://secure.omtrak.com/v2/projects/8/site-works/123/documents?access_token=xxyyzz
+    POST https://secure.omtrak.com/v2/projects/8/site-works/123/documents?access_token=xxyyzz
 
 [Multi-Part]
 
@@ -107,4 +116,4 @@ Result:
 REMOVE DOCUMENT
 ===============
 
-DELETE https://secure.omtrak.com/v2/projects/8/site-works/123/documents/3456?access_token=xxyyzz
+    DELETE https://secure.omtrak.com/v2/projects/8/site-works/123/documents/3456?access_token=xxyyzz
