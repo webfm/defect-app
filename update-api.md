@@ -87,7 +87,7 @@ The delete web service will be something like:
 
     DELETE https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 
-DOWNLAOD DOCUMENT
+DOWNLOAD DOCUMENT
 =================
 
     GET https://secure.omtrak.com/v2/projects/<project-id>/documents/<document-id>/download
