@@ -73,7 +73,7 @@ PUT https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 CHANGE STATUS
 =============
 
-PUT https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
+    PUT https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
 
     {
         "status": "IN_PROGRESS",
@@ -85,7 +85,7 @@ DELETE
 
 The delete web service will be something like:
 
-DELETE https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
+    DELETE https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 
 DOWNLAOD DOCUMENT
 =================
