@@ -74,4 +74,4 @@ When user tap on an invalide defect, the defect details view will show conflict 
 
 Sync conflict
 -------------
-sync conflict.pdf
+[sync conflict documentation](sync conflict.pdf)
