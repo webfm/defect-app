@@ -90,7 +90,7 @@ The delete web service will be something like:
 DOWNLOAD DOCUMENT
 =================
 
-    GET https://secure.omtrak.com/v2/projects/<project-id>/documents/<document-id>/download
+    GET https://secure.omtrak.com/v2/projects/<project-id>/documents/<document-id>/download?access_token=xxx
 
 Thumbnails
 
