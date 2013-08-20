@@ -94,7 +94,7 @@ DOWNLOAD DOCUMENT
 
 Thumbnails
 
-    GET https://secure.omtrak.com/v2/project-name/documents/id/download?size=thumbnail
+    GET https://secure.omtrak.com/v2/project-name/documents/id/download?size=thumbnail?access_token=xxx
 
 UPLOAD DOCUMENT
 ===============
