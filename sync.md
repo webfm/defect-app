@@ -72,3 +72,6 @@ Step 7
 ------
 When user tap on an invalide defect, the defect details view will show conflict and validation message.
 
+Sync conflict
+-------------
+sync conflict.pdf
