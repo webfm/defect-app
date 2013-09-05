@@ -26,6 +26,8 @@ Read -> Get
 Update -> Put  
 Delete -> Delete  
 
+All the value of hierarchy fields (the fields start with 'h') should be submitted as number not a string.
+
 CREATE
 ======
 
@@ -73,7 +75,7 @@ PUT https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 CHANGE STATUS
 =============
 
-    POST https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
+POST https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
 
     {
         "status": "IN_PROGRESS",
