@@ -73,7 +73,7 @@ PUT https://secure.omtrak.com/v2/projects/8/site-works/123?access_token=xxyyzz
 CHANGE STATUS
 =============
 
-    PUT https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
+    POST https://secure.omtrak.com/v2/projects/8/site-works/123/status?access_token=xxyyzz
 
     {
         "status": "IN_PROGRESS",
