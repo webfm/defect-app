@@ -48,7 +48,7 @@ Check all updated defects on the ipad for permission conflict, use change detect
 
 Validate all updated and still valid defects on the iPad, invalidate all defect failed validation
 
-    Store validatino message in the defect
+    Store validation message in the defect
 
 Step 4
 ------
@@ -58,7 +58,7 @@ Upload all valid and updated defects to the server
 
 Step 5
 ------
-If conflict dtected, give summary report if conflicts in a modal view i.e.
+If conflict detected, give summary report if conflicts in a modal view i.e.
 
     "You no longer have permssion to create site work issue, please contact your project manager"
     "20 site issue contains invalid data"
