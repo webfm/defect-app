@@ -35,42 +35,56 @@ Step 2
 ------
 Download defect list from server (incremental update)
 
-    For defects updated on the server not but updated on the ipad, update the ipad defect using server copy
+    For defects updated on the server not but updated on the ipad, update defects on the iPad with server date
 
-    For defect updated on the server and updated on the ipad, mark it as invalidated
+    For defect updated on the server and updated on the iPad, leave the changes
+
+    For each defect check update need to be separated into two portions
+        1) status update
+        2) other defect data include defect fields (from template), assignee, due date
+
+    For example for a defect status and field (assignee) has been updated on the server and the defect field (description, due date) has been updated on the iPad
+    then in step 2 update the status of the iPad defect (the defect is still valid and will need to be pushed to the server later)
 
 Step 3
 ------
 
-Check all updated defects on the ipad for permission conflict, use change detection system.  Invalidate defect fails permission check
+Check all updated defects on the iPad for permission conflict, i.e. for new defects check if user have create defect permission.
+Invalidate defects that failed permission check
 
     Store conflict message for each defect on the defect
 
-Validate all updated and still valid defects on the iPad, invalidate all defect failed validation
+Validate all updated and still valid defects on the iPad, invalidate all defect failed validation (use updated defect template field validators)
 
     Store validation message in the defect
 
 Step 4
 ------
-Upload all valid and updated defects to the server
+Upload all valid and updated or new defects to the server
 
-    If server rejects the defect, mark it as invalidated
+    If server rejects the defect, and status code is 404 then remove the defect on the iPad
+
+    If server rejects the defect, mark defect as invalidated.  
+
+    There will be issues with iPad app contain defects deleted on the server.  This case is ignored.
 
 Step 5
 ------
-If conflict detected, give summary report if conflicts in a modal view i.e.
-
-    "You no longer have permssion to create site work issue, please contact your project manager"
-    "20 site issue contains invalid data"
+If conflict detected, give summary report if conflicts detected.
 
 Step 6
 ------
-In defect list mark conflicted defect by change background color to light red. 
-User can user filter to see invalid defects
+In defect list mark conflicted defect.  User can user filter to see invalid defects.
 
 Step 7 
 ------
 When user tap on an invalide defect, the defect details view will show conflict and validation message.
+
+Permission Conflicts
+--------------------
+When a defect has permission conflicts, users can not do anything to resolve the issue by them self.
+One possible resolution is to call the project managers to obtain the permission.  If they should have the permission from the start
+user can logout to flush the conflicted defects.
 
 Sync conflict
 -------------
