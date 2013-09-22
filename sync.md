@@ -78,7 +78,7 @@ In defect list mark conflicted defect.  User can user filter to see invalid defe
 
 Step 7 
 ------
-When user tap on an invalide defect, the defect details view will show conflict and validation message.
+When user tap on an invalide defect, the defect details view will display conflict or validation message.
 
 Permission Conflicts
 --------------------
