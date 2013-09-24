@@ -104,6 +104,14 @@ UPLOAD DOCUMENT
 
     POST https://secure.omtrak.com/v2/projects/8/site-works/123/documents?access_token=xxyyzz
 
+UPLOAD UPDATED DOCUMENT
+=======================
+    
+    POST https://secure.omtrak.com/v2/projects/<project-id>/site-works/<issue-id>/documents/<document-id>?access_token=xxyyzz
+
+UPLOAD DOCUMENT RESPONSE
+========================
+
 [Multi-Part]
 
 field name: document

@@ -39,12 +39,22 @@ Download defect list from server (incremental update)
 
     For defect updated on the server and updated on the iPad, leave the changes
 
-    For each defect check update need to be separated into two portions
+    For each defect check update need to be separated into three portions
         1) status update
-        2) other defect data include defect fields (from template), assignee, due date
+        2) documents
+        3) other defect data include defect fields (from template), assignee, due date
 
-    For example for a defect status and field (assignee) has been updated on the server and the defect field (description, due date) has been updated on the iPad
-    then in step 2 update the status of the iPad defect (the defect is still valid and will need to be pushed to the server later)
+
+For example for a defect status and field (assignee) has been updated on the server and the defect field (description, due date) has been updated on the iPad
+then in step 2 update the status of the iPad defect (the defect is still valid and will need to be pushed to the server later)
+
+When sync documents, we need to sync individual documents in a defect.  
+
+    1) Any new document added on the server, download it to the iPad
+    2) Any document removed on the server, remove it on the iPad (regardless of whether the document annotation has changed or not)
+    3) After step 1 and 2 is done, any new document on the iPad, upload it to the iPad
+    4) Any document changed on the iPad (added annotation), upload it to the ipad (sync.md#UPLOAD-UPDATED-DOCUMENT)
+    5) Any document deleted on the ipad, remove it on the server
 
 Step 3
 ------
@@ -89,3 +99,13 @@ user can logout to flush the conflicted defects.
 Sync conflict
 -------------
 [sync conflict documentation](sync conflict.pdf)
+
+Download Documents
+==================
+
+After the defect sync process, the iPad defects document should match the server defects document.  The 
+document documents process need to traverse through all defect from the lowest defect id.  For each document
+check if the document exist on the iPad, if does not exist download the document else do nothing.
+
+
+
