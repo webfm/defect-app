@@ -56,7 +56,7 @@ When sync documents, we need to sync individual documents in a defect.
     4) Any document changed on the iPad (added annotation), upload it to the server
     5) Any document deleted on the ipad, remove it on the server
 
-[Document update api](update-api.md#UPLOAD-UPDATED-DOCUMENT)
+[Document update api](update-api.md#upload-updated-document)
 
 Step 3
 ------
