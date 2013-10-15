@@ -110,7 +110,9 @@ UPLOAD UPDATED DOCUMENT
 =======================
     
     POST https://secure.omtrak.com/v2/projects/<project-id>/site-works/<issue-id>/documents/<document-id>?access_token=xxyyzz
-
+    
+    file field name: document
+    
 UPLOAD DOCUMENT RESPONSE
 ========================
 
