@@ -84,9 +84,20 @@ here is a block of issue data from issue data api
 
 the JSON blocks are simplified
 
-The issue data have a field ("h806": 14720), this links to template block where template.field = h806 and source.type = "LOCATION".  The source type indicate that this issue field should reference location list for it's value label.
+In issue data JSON block, issue have a field ("h806": 14720), this links to template block where template.field = h806 and source.type = "LOCATION".  
 
-In location block, there is a location with id 14720 and label "Ground (GF)".  Traverse through location parent, we can build a location string "Blackwater Mine (BW) - Heavey Vehicle Workshop (BW/HVW) - Ground (GF)"
+The source type indicate that this issue field should reference location list for it's value label.
+
+In location block, there is a location with id 14720 and label "Ground (GF)".  Traverse through location parent, we can build a value string - "Blackwater Mine (BW) - Heavey Vehicle Workshop (BW/HVW) - Ground (GF)"
+
+The template.field = h806 also have template.label = "Location"
+
+Combining the issue field, template and locations, we can build the issue field as following
+
+    feild.field = h806
+    field.label = Location
+    field.value = "Blackwater Mine (BW) - Heavey Vehicle Workshop (BW/HVW) - Ground (GF)"
+    field.type = LOCATION
 
 
 
