@@ -1,23 +1,21 @@
 Location Example
 ================
 
-value list example - category
-
-here is a block of project template from project data api
+here is a JSON block of project template from project data api
 
     "template": [
         {
             "sort": 2,
             "label": "Location",
             "type": "SELECT",
-            "prefix": "h806",
+            "field": "h806",
             "source": {
                 "type": "LOCATIONS"
             }
         },
     ],
 
-here is a block of locations from project data api
+here is a block of location list from project data api
 
     "locations": {
         "labels": [
@@ -84,36 +82,11 @@ here is a block of issue data from issue data api
         "g805": "Broken Window",
     }
 
-the blocks are simplified to make it easy to read
+the JSON blocks are simplified
 
-In template block we have template field called Location (from label) that of type SELECT, and source.type is LOCATINOS.
+The issue data have a field ("h806": 14720), this links to template block where template.field = h806 and source.type = "LOCATION".  The source type indicate that this issue field should reference location list for it's value label.
 
-The template.type indicate it's a value list field and template.source.type indicate that it uses locations value list for selection values (block of locations from project data api)
-
-The template.prefix has value h806,  this value links to an element in issue data block ("h806": 14720).
-
-The value of the element 14720 links to the id of a value list item in location value list
-    {
-        "id": 14718,
-        "label": "Blackwater Mine (BW)",
-        "children": [
-            {
-                "id": 14719,
-                "label": "Heavey Vehicle Workshop (BW/HVW)",
-                "children": [
-                {
-                    "id": 14720,
-                    "label": "Ground (GF)",
-                    "children": [
-                        {
-                            "id": 14721,
-                            "label": "Workshop (G-01)"
-                        },
-                    ]
-                },
-            },
-        ]
-    }
+In location block, there is a location with id 14720 and label "Ground (GF)".  Traverse through location parent, we can build a location string "Blackwater Mine (BW) - Heavey Vehicle Workshop (BW/HVW) - Ground (GF)"
 
 <a name="generate-view"/>
 to generate data for displaying the SELECT field, we need to combine tempalte data with site issue with project data
