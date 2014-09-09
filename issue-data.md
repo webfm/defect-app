@@ -1,140 +1,103 @@
 Issue data
 ==========
 
-GET https://secure.omtrak.com/v2/projects/:project_id/defects?access_token=:ticket
+GET https://secure.omtrak.com/v2/projects/{projectId}/site-works/work-requests
 
-Returns issues in a project.
+Description
+-----------
+Loads all work requests (issue and maintenance) in a project.
 
-Parameters
-----------
+URL Placeholders
+----------------
+* projectId - the id of the project
+* Request Parameters
+* access_token - The login access token
+* gzip (optional, default value = false) - true to enable gzip compression of the response data (body) to be generated. Any other value will automatically considered false. 
 
-* project: project id.
-    * required
-* access_token: Access Token obtained from [login](oauth-login.md)
+NOTE: If the server compressed the response body (data), a "Content-Encoding" header will appear with value set to gzip.
+ 
+* since (optional, default value = 0) - The date represented in seconds since the standard base time ("the epoch"), January 1, 1970, 00:00:00 GMT.
+* If 0, the server will generate a response containing all work request as created.
+* If > 0, the server will generate a response containing work requests that are created, updated, and deleted at the start of the "since" date up to the current time.
 
-Example
--------
+Response Status
+---------------
+* 200 OK - The response body is the generated work request list JSON
 
-https://secure.omtrak.com/v2/projects/8/site-works?access_token=xxxxxx
+Response Header
+---------------
+* Content-Encoding: gzip - If the server was able to compress the asset list using gzip compression (see gzip request parameter).
 
-    [
-        {
-            "id": 229,
-            "uid": "#ISS1",
-            "status": "CLOSED",
-            "assignee": {
-                "id": 66,
-                "name": "WebFM"
-            },
-            "h806": 3,
-            "h3540": 2,
-            "g805": "Broken Window",
-            "g807": "Window is Broken in Teleporter room, Scary things are happening\r\nwe need to fix it now",
-            "g808": [
+Response Body
+-------------
+* The response body is a JSON with the work requests items.
+* If "since" parameter is not provided, or is 0, the JSON is a object that contains "issues", and "maintenance" field in which are objects that contains "created", "updated", and "deleted" fields. The "created" fields contains the items corresponds to the issues or maintenance. The "updated" and "deleted" fields will always be an empty array.
+
+    {
+        "issues" : {
+            "created" : [
                 {
-                    "id": 12968,
-                    "name": "selection popover",
-                    "extension": "png"
-                }
+                    // issue data
+                },
+                // more issues ...
             ],
-            "logs": [
+            "updated" : [],
+            "deleted" : []
+        }
+        "maintenance" : {
+            "created" : [
                 {
-                    "date": "2013-04-23T06:58:32Z",
-                    "type": "UPDATE",
-                    "message": "Charlie Wu updated the issue."
-                    "account": {
-                        "id": 2,
-                        "email": "c.wu@webfm.net",
-                        "firstName": "Charlie",
-                        "lastName": "Wu"
-                    },
-                    "team": {
-                        "id": 233,
-                        "name": "WebFM Team"
-                    }
+                    // maintenance data
                 },
+                // more maintenance ...
+            ],
+            "updated" : [],
+            "deleted" : []
+        }
+    }
+
+* If "since" parameter is > 0, the JSON is a object that contains "issues", and "maintenance" field in which are objects that contains "created", "updated", and "deleted" fields.
+* "deleted" field will only contain id per item.
+
+    {
+        "issues" : {
+            "created" : [
                 {
-                    "date": "2013-04-24T00:04:05Z",
-                    "type": "COMMENT",
-                    "message": "Charlie Wu added a comment.",
-                    "comment": "hey thing is not fixed, what happened"
-                    "account": {
-                        "id": 2,
-                        "email": "c.wu@webfm.net",
-                        "firstName": "Charlie",
-                        "lastName": "Wu"
-                    },
-                    "team": {
-                        "id": 233,
-                        "name": "WebFM Team"
-                    }
+                    // issue data
                 },
+                // more created issues ...
+            ],
+            "updated" : [
                 {
-                    "date": "2013-04-16T01:21:17Z",
-                    "type": "STATUS_CHANGE_IN_PROGRESS",
-                    "message": "Zhongtao Ren (OMTrak Support) changed the status to In-Progress."
-                    "account": {
-                        "id": 2,
-                        "email": "z.ren@webfm.net",
-                        "firstName": "Zhongtao",
-                        "lastName": "Ren"
-                    },
-                    "team": {
-                        "id": 233,
-                        "name": "WebFM Team"
-                    }
+                    // issue data
                 },
+                // more updated issues ...
+            ],
+            "deleted" : [
                 {
-                    "date": "2013-04-08T06:47:40Z",
-                    "type": "CREATE",
-                    "message": "Zhongtao Ren (OMTrak Support) created the issue."
-                    "account": {
-                        "id": 2,
-                        "email": "z.ren@webfm.net",
-                        "firstName": "Zhongtao",
-                        "lastName": "Ren"
-                    },
-                    "team": {
-                        "id": 233,
-                        "name": "WebFM Team"
-                    }
-                }
+                    id: 1
+                },
+                // more deleted issues ...
             ]
         }
-    ]
-
-* id - issue id from server db
-* uid - issue id displayed to user
-* status - issue status
-    * PENDING
-    * REJECTED
-    * IN_PROGRESS
-    * SUBMITTED
-    * CLOSED
-* a123 - link to a project template
-    * links to Project Data template.prefix for SELECT type
-    * links to Project Date template.field for all except SELECT type
-* logs - logs for issue
-    * date - recorded date
-    * type - log type (we don't have to display this)
-        * STATUS_CHANGE_CLOSED
-        * STATUS_CHANGE_REJECTED
-        * STATUS_CHANGE_SUBMITTED
-        * STATUS_CHANGE_IN_PROGRESS
-        * STATUS_CHANGE_ASSIGNED
-        * STATUS_CHANGE_NOT_ASSIGNED
-        * STATUS_CHANGE_OPEN
-        * ASSIGNED
-        * COMMENT
-        * CREATE
-        * UPDATE
-        * if type is COMMENT then log be displayed in Comment section,
-        * if type is not COMMENT then log will be displayed in Log section
-        * log and comment section is display here http://db.tt/U4xXVqno
-    * comment - user created comment
-        * user can only create comment, comment content is add to this field (log with type "COMMENT")
-        * if log is type COMMET comment display "comment" as the detail in the table view
-    * message - log message
-        * if log is not type COMMET comment display "message" as the detail in the table view
-    * account - the creator of the log (id, email, first, and last name)
-    * team - team the created account belong to (id, name)
+        "maintenance" : {
+            "created" : [
+                {
+                    // maintenance data
+                },
+                // more created maintenance ...
+            ],
+            "updated" : [
+                {
+                    // maintenance data
+                },
+                // more updated maintenance ...
+            ],
+            "deleted" : [
+                {
+                    id: 1
+                },
+                // more deleted maintenance ...
+            ]
+        }
+    }
